@@ -12,7 +12,10 @@ const seed = ({ userData, clothesData }) => {
         CREATE TABLE users (
           user_id SERIAL PRIMARY KEY,
           username VARCHAR(20) NOT NULL,
-          password VARCHAR(16) NOT NULL
+          password VARCHAR(16) NOT NULL,
+          first_name VARCHAR(20) NOT NULL,
+          last_name VARCHAR(20) NOT NULL,
+          user_preferences JSON
         );`);
 
       const clothesTablePromise = db.query(`
