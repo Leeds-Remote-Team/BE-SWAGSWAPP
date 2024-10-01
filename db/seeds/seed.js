@@ -23,7 +23,7 @@ const seed = ({ userData, clothesData }) => {
           created_at TIMESTAMP DEFAULT NOW(),
           top_category VARCHAR NOT NULL,
           category VARCHAR NOT NULL,
-          tags VARCHAR,
+          tags JSON,
           color VARCHAR NOT NULL
         );`);
 
