@@ -27,7 +27,7 @@ describe("/api/clothes", () => {
       })
       .expect(201)
       .then((response) => {
-        expect(response.body).toEqual({
+        expect(response.body.postedClothes).toEqual({
           user_id: 3,
           img_url:
             "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
@@ -35,6 +35,8 @@ describe("/api/clothes", () => {
           category: "polo-shirt",
           tags: { style: "smartwear" },
           color: "white",
+          item_id: 4,
+          created_at: expect.any(String),
         });
       });
   });

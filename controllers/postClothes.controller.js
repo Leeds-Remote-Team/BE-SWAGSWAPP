@@ -11,12 +11,8 @@ exports.postClothes = (req, res, next) => {
     tags,
     color,
   };
-  postingClothes()
-    .then(() => {
-      return postingClothes(clothes);
-    })
+  postingClothes(clothes)
     .then((postedClothes) => {
-      console.log(postedClothes);
       res.status(201).send({ postedClothes });
     })
     .catch((err) => {

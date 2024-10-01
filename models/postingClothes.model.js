@@ -14,8 +14,7 @@ exports.postingClothes = (clothes) => {
         clothes.color,
       ]
     )
-    .then((result) => {
-      console.log(result, "<--- result from the model");
-      return result.body;
+    .then(({ rows }) => {
+      return rows[0];
     });
 };
