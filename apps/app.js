@@ -9,6 +9,7 @@ const { getUserById } = require("../controllers/getUserById");
 app.use(cors());
 
 app.use(express.json());
+
 app.get("/api/wardrobe/:id", getWardrobeById);
 
 app.post("/api/clothes", postClothes);
