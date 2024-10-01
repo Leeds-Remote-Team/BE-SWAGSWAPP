@@ -9,6 +9,7 @@ const { postClothes } = require("../controllers/postClothes.controller");
 app.use(cors());
 
 app.use(express.json());
+
 app.get("/api/wardrobe/:id", getWardrobeById);
 app.post("/api/clothes", postClothes);
 

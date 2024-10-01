@@ -11,6 +11,7 @@ exports.postClothes = (req, res, next) => {
     tags,
     color,
   };
+
   postingClothes(clothes)
     .then((postedClothes) => {
       res.status(201).send({ postedClothes });
