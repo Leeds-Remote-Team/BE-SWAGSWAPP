@@ -11,7 +11,6 @@ app.use(express.json());
 app.get("/api/wardrobe/:id", getWardrobeById);
 
 app.all("/*", (req, res, next) => {
-  console.log("reached final error handler");
   res.status(404).send({ msg: "Page not found" });
 });
 
