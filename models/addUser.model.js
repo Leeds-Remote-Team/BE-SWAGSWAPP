@@ -1,5 +1,4 @@
 const db = require("../db/connection");
-const pg = require("pg-format");
 
 exports.addUser = (
   username,
@@ -8,14 +7,27 @@ exports.addUser = (
   last_name,
   user_preferences
 ) => {
-  console.log(username, password, "<-- Username, password");
+  const regex = /^[A-Za-z0-9]+$/;
+  if(!username || !password || !first_name || !last_name){
+    return Promise.reject({
+      status: 400, 
+      msg: "Must contain the required field"
+    })
+  }
+
+  if(!regex.test(username) || !regex.test(password) || !regex.test(first_name) || !regex.test(last_name)){
+    return Promise.reject({
+      status: 400, 
+      msg: "Invalid user data"
+    })
+  }
+
   return db
     .query(
-      `INSERT INTO users (username, password, first_name, last_name, user_preferences) VALUES {$1, $2, $3, $4, $5} RETURNING *`,
+      `INSERT INTO users (username, password, first_name, last_name, user_preferences) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
       [username, password, first_name, last_name, user_preferences]
     )
     .then(({ rows }) => {
-      console.log(rows, "<-- returning rows");
       return rows[0];
     });
 };

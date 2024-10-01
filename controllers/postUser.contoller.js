@@ -1,7 +1,6 @@
 const { addUser } = require("../models/addUser.model");
 
 exports.postUser = (req, res, next) => {
-  //   console.log(req);
   const { username, password, first_name, last_name, user_preferences } =
     req.body;
   return addUser(username, password, first_name, last_name, user_preferences)
