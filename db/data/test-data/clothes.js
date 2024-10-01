@@ -1,6 +1,6 @@
 module.exports = [
   {
-    user_id: 1,
+    user_id: 1, //also would work if we put in the username here instead of the user_id
     img_url:
       "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
     top_category: "clothing",

@@ -1,5 +1,6 @@
 const format = require("pg-format");
 const db = require("../connection");
+
 const seed = ({ userData, clothesData }) => {
   return db
     .query(`DROP TABLE IF EXISTS clothes;`)
@@ -13,8 +14,8 @@ const seed = ({ userData, clothesData }) => {
           username VARCHAR(20) NOT NULL,
           password VARCHAR(16) NOT NULL
         );`);
-      const clothesTablePromise = db.query(
-        `
+
+      const clothesTablePromise = db.query(`
         CREATE TABLE clothes (
           item_id SERIAL PRIMARY KEY,
           user_id INT REFERENCES users(user_id),
@@ -24,31 +25,34 @@ const seed = ({ userData, clothesData }) => {
           category VARCHAR NOT NULL,
           tags VARCHAR,
           color VARCHAR NOT NULL
-        );`
-      );
+        );`);
 
-      return Promise.all([clothesTablePromise, usersTablePromise]);
+      return Promise.all([usersTablePromise, clothesTablePromise]);
     })
     .then(() => {
       const insertUsersQueryStr = format(
-        "INSERT INTO users ( username, password) VALUES %L;",
+        "INSERT INTO users (username, password) VALUES %L;",
         userData.map(({ username, password }) => [username, password])
       );
-      const usersPromise = db.query(insertUsersQueryStr);
-
+      return db.query(insertUsersQueryStr);
+    })
+    .then(() => {
       const insertClothesQueryStr = format(
-        "INSERT INTO clothes (img_url, top_category, category, tags, color) VALUES %L;",
-        clothesData.map(({ img_url, top_category, category, tags, color }) => [
-          img_url,
-          top_category,
-          category,
-          tags,
-          color,
-        ])
+        "INSERT INTO clothes (user_id, img_url, top_category, category, tags, color) VALUES %L;",
+        clothesData.map(
+          ({ user_id, img_url, top_category, category, tags, color }) => [
+            user_id,
+            img_url,
+            top_category,
+            category,
+            tags,
+            color,
+          ]
+        )
       );
-      const clothesPromise = db.query(insertClothesQueryStr);
 
-      return Promise.all([clothesPromise, usersPromise]);
+      return db.query(insertClothesQueryStr);
     });
 };
+
 module.exports = seed;
