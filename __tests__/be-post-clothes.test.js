@@ -80,7 +80,6 @@ describe("/api/clothes", () => {
       })
       .expect(400)
       .then((response) => {
-        console.log(response.body, "<-------response body");
         expect(response.body.msg).toBe(
           "Bad Request: img_url is required and must be a string"
         );

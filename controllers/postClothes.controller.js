@@ -17,7 +17,6 @@ exports.postClothes = (req, res, next) => {
       res.status(201).send({ postedClothes });
     })
     .catch((err) => {
-      console.log(err);
       next(err);
     });
 };

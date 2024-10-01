@@ -3,7 +3,6 @@ const pg = require("pg-format");
 
 exports.postingClothes = (clothes) => {
   const { user_id, img_url, top_category, category, tags, color } = clothes;
-  console.log(img_url, clothes, "image_url");
 
   if (!user_id || typeof user_id !== "number") {
     return Promise.reject({
@@ -12,7 +11,6 @@ exports.postingClothes = (clothes) => {
     });
   }
   if (!img_url || typeof img_url !== "string") {
-    console.log("error message captured");
     return Promise.reject({
       status: 400,
       msg: "Bad Request: img_url is required and must be a string",
@@ -61,7 +59,6 @@ exports.postingClothes = (clothes) => {
       return rows[0];
     })
     .catch((err) => {
-      console.log(err);
       next(err);
     });
 };
