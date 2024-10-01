@@ -17,7 +17,7 @@ describe("/api/clothes", () => {
       .post("/api/clothes")
 
       .send({
-        user_id: 4,
+        user_id: 3,
         img_url:
           "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         top_category: "clothing",
@@ -28,7 +28,7 @@ describe("/api/clothes", () => {
       .expect(201)
       .then((response) => {
         expect(response.body).toEqual({
-          user_id: 4,
+          user_id: 3,
           img_url:
             "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
           top_category: "clothing",
