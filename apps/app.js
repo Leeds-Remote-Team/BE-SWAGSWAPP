@@ -18,10 +18,5 @@ app.all("/*", (req, res, next) => {
   res.status(404).send({ msg: "Page not found" });
 });
 
-app.use((err, req, res, next) => {
-  if (err.status) {
-    res.status(err.status).send({ msg: err.msg });
-  }
-});
 
 module.exports = app;
