@@ -30,7 +30,7 @@ app.post("/api/users", postUser);
 
 app.get("/api/users/:user_id", getUserByUserId);
 
-app.patch("/api/clothes/:user_id/:clothes_id", patchClothesByClothesId);
+app.patch("/api/clothes/:user_id/:item_id", patchClothesByClothesId);
 
 app.use((err, req, res, next) => {
   if (err.code === "22P02") {

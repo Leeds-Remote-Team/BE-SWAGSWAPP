@@ -14,8 +14,6 @@ afterAll(() => {
 describe.only("PATCH /api/clothes/:user_id/:clothes_id", () => {
   it("200, should returns an updated clothes object in the database when patching a key on tags column", () => {
     const tagsUpdate = {
-      //   sleeves: "short-sleeve",
-      //   style: "t-shirt",
       last_date_worn: "021024",
       wear_frequency: 1,
     };
@@ -39,6 +37,7 @@ describe.only("PATCH /api/clothes/:user_id/:clothes_id", () => {
             wear_frequency: 1,
           },
           color: "red",
+          created_at: expect.any(String)
         });
       });
   });
