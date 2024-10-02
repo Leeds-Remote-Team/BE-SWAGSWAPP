@@ -22,9 +22,22 @@ module.exports = [
     tags: {
       shoes: "shoe",
       last_date_worn: ["date_string"],
-      wear_frequency: 0,
+      wear_frequency: 10,
     },
     color: "brown",
+  },
+  {
+    user_id: 2,
+    img_url:
+      "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+    top_category: "footwear",
+    category: "feet",
+    tags: {
+      shoes: "shoe",
+      last_date_worn: ["date_string"],
+      wear_frequency: 0,
+    },
+    color: "green",
   },
   {
     user_id: 3,
