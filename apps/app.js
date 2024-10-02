@@ -14,6 +14,10 @@ const {
   getUserByUserId,
 } = require("../controllers/getUserByUserId.controller");
 
+const {
+  patchClothesByClothesId,
+} = require("../controllers/patchClothesByClothesId.controller");
+
 app.use(cors());
 
 app.use(express.json());
@@ -25,6 +29,8 @@ app.post("/api/clothes/:user_id", postClothesByUserId);
 app.post("/api/users", postUser);
 
 app.get("/api/users/:user_id", getUserByUserId);
+
+app.patch("/api/clothes/:user_id/:clothes_id", patchClothesByClothesId);
 
 app.use((err, req, res, next) => {
   if (err.code === "22P02") {
