@@ -5,7 +5,12 @@ const {
   getWardrobeById,
 } = require("../controllers/getWardrobeById.controller");
 const { postClothes } = require("../controllers/postClothes.controller");
+
+const { postUser } = require("../controllers/postUser.contoller");
+
+
 const { getUserById } = require("../controllers/getUserById");
+
 app.use(cors());
 
 app.use(express.json());
@@ -13,6 +18,7 @@ app.use(express.json());
 app.get("/api/wardrobe/:id", getWardrobeById);
 
 app.post("/api/clothes", postClothes);
+app.post("/api/users", postUser);
 
 app.get("/api/users/:id", getUserById);
 
