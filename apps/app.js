@@ -2,25 +2,29 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const {
-  getWardrobeById,
-} = require("../controllers/getWardrobeById.controller");
-const { postClothes } = require("../controllers/postClothes.controller");
+  getClothesByUserId,
+} = require("../controllers/getClothesByUserId.controller");
+const {
+  postClothesByUserId,
+} = require("../controllers/postClothesByUserId.controller");
 
 const { postUser } = require("../controllers/postUser.contoller");
 
-
-const { getUserById } = require("../controllers/getUserById");
+const {
+  getUserByUserId,
+} = require("../controllers/getUserByUserId.controller");
 
 app.use(cors());
 
 app.use(express.json());
 
-app.get("/api/wardrobe/:id", getWardrobeById);
+app.get("/api/clothes/:user_id", getClothesByUserId);
 
-app.post("/api/clothes", postClothes);
+app.post("/api/clothes/:user_id", postClothesByUserId);
+
 app.post("/api/users", postUser);
 
-app.get("/api/users/:id", getUserById);
+app.get("/api/users/:user_id", getUserByUserId);
 
 app.use((err, req, res, next) => {
   if (err.code === "22P02") {

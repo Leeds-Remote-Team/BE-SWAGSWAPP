@@ -1,6 +1,6 @@
 const db = require("../db/connection");
 
-exports.fetchUserById = (user_id) => {
+exports.fetchUserByUserId = (user_id) => {
   return db
     .query(
       `SELECT username, user_id, first_name, last_name FROM users WHERE users.user_id = $1;`,

@@ -11,10 +11,10 @@ afterAll(() => {
   return db.end();
 });
 
-describe("/api/wardrobe", () => {
+describe("/api/clothes/:user_id", () => {
   it("200: Should return an array of wardrobe items with the expected keys and types for a given user_id", () => {
     return request(app)
-      .get("/api/wardrobe/2")
+      .get("/api/clothes/2")
       .expect(200)
       .then(({ body }) => {
         expect(Array.isArray(body)).toBe(true);
