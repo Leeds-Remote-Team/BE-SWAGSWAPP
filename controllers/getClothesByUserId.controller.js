@@ -4,7 +4,13 @@ const {
 
 exports.getClothesByUserId = (req, res, next) => {
   const { user_id } = req.params;
-  return fetchClothesByUserId(user_id)
+  const {
+    searchText = "",
+    sortBy = "wear_frequency",
+    order = "desc",
+  } = req.query;
+
+  return fetchClothesByUserId(user_id, searchText, sortBy, order)
     .then((data) => {
       res.status(200).send(data);
     })
