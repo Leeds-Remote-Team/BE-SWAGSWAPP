@@ -11,13 +11,11 @@ afterAll(() => {
   return db.end();
 });
 
-describe("/api/clothes", () => {
+describe("/api/clothes/:user_id", () => {
   it("201, should return an array of all the posted clothes in the database", () => {
     return request(app)
-      .post("/api/clothes")
-
+      .post("/api/clothes/2")
       .send({
-        user_id: 3,
         img_url:
           "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         top_category: "clothing",
@@ -28,7 +26,7 @@ describe("/api/clothes", () => {
       .expect(201)
       .then((response) => {
         expect(response.body.postedClothes).toEqual({
-          user_id: 3,
+          user_id: 2,
           img_url:
             "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
           top_category: "clothing",
@@ -50,9 +48,8 @@ describe("/api/clothes", () => {
   });
   test("400: Bad request, INVALID user ID type", () => {
     return request(app)
-      .post("/api/clothes")
+      .post("/api/clothes/glue")
       .send({
-        user_id: "three",
         img_url:
           "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         top_category: "clothing",
@@ -69,9 +66,8 @@ describe("/api/clothes", () => {
   });
   test("400: Bad request, INVALID image URL", () => {
     return request(app)
-      .post("/api/clothes")
+      .post("/api/clothes/2")
       .send({
-        user_id: 3,
         img_url: 577,
         top_category: "clothing",
         category: "polo-shirt",
@@ -87,9 +83,8 @@ describe("/api/clothes", () => {
   });
   test("400: Bad request, Missing category", () => {
     return request(app)
-      .post("/api/clothes")
+      .post("/api/clothes/2")
       .send({
-        user_id: 3,
         img_url:
           "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         category: "polo-shirt",

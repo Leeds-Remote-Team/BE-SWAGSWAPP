@@ -1,10 +1,11 @@
 const db = require("../db/connection");
 const pg = require("pg-format");
 
-exports.postingClothes = (clothes) => {
+exports.postingClothesByUserId = (clothes) => {
   const { user_id, img_url, top_category, category, tags, color } = clothes;
+  const num_user_id = Number(user_id);
 
-  if (!user_id || typeof user_id !== "number") {
+  if (!num_user_id || typeof num_user_id !== "number") {
     return Promise.reject({
       status: 400,
       msg: "Bad Request: user_id is required and must be a number",
@@ -44,7 +45,7 @@ exports.postingClothes = (clothes) => {
     .query(
       `INSERT INTO clothes (user_id, img_url, top_category, category, tags, color ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
       [
-        clothes.user_id,
+        num_user_id,
         clothes.img_url,
         clothes.top_category,
         clothes.category,
