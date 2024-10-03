@@ -1,0 +1,114 @@
+{
+  "GET /api": {
+    "description": "serves up a json representation of all the available endpoints of the api"
+  },
+
+  "GET /api/clothes/:user_id": {
+    "description": "serves an array of all clothes belonging to a user_id",
+    "queries": [
+      "searchText",
+      "sort_by",
+      ["last_date_worn", "wear_frequency"],
+      "order",
+      ["asc, desc"]
+    ],
+    "exampleResponse": [
+      {
+        "user_id": 2,
+        "img_url": "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+        "top_category": "footwear",
+        "category": "feet",
+        "tags": {
+          "shoes": "shoe",
+          "last_date_worn": ["date_string"],
+          "wear_frequency": 10
+        },
+        "color": "brown"
+      },
+      {
+        "user_id": 2,
+        "img_url": "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+        "top_category": "footwear",
+        "category": "feet",
+        "tags": {
+          "shoes": "shoe",
+          "last_date_worn": ["date_string"],
+          "wear_frequency": 0
+        },
+        "color": "green"
+      }
+    ]
+  },
+
+  "GET /api/clothes/:user_id/:item_id": {
+    "description": "serves a single item of clothing from a user",
+    "queries": [],
+    "exampleResponse": {
+      "user_id": 3,
+      "img_url": "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
+      "top_category": "accessories",
+      "category": "wrist",
+      "tags": {
+        "watch": "watch",
+        "last_date_worn": ["date_string"],
+        "wear_frequency": 0
+      },
+      "color": "gold"
+    }
+  },
+
+  "POST /api/clothes/:user_id": {
+    "description": "Allows a user to add an item of clothing",
+    "queries": [],
+    "exampleResponse": {
+      "user_id": 1,
+      "img_url": "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+      "top_category": "clothing",
+      "category": "t-shirt",
+      "tags": {
+        "sleeves": "short-sleeve",
+        "style": "t-shirt",
+        "last_date_worn": ["date_string"],
+        "wear_frequency": 0
+      },
+      "color": "red"
+    }
+  },
+
+  "PATCH /api/clothes/:user_id/:item_id": {
+    "description": "allows a user to change details of his clothes, e.g. last worn or wear frequency",
+    "queries": [],
+    "exampleResponse": [
+      {
+        "user_id": 3,
+        "img_url": "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
+        "top_category": "accessories",
+        "category": "wrist",
+        "tags": {
+          "watch": "watch",
+          "last_date_worn": ["date_string"],
+          "wear_frequency": 0
+        },
+        "color": "gold"
+      },
+      {
+        "user_id": 3,
+        "img_url": "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
+        "top_category": "accessories",
+        "category": "wrist",
+        "tags": {
+          "watch": "watch",
+          "last_date_worn": ["different date_string"],
+          "wear_frequency": 75
+        },
+        "color": "gold"
+      }
+    ]
+  },
+
+  "DELETE /api/clothes/:user_id/:item_id": {
+    "description": "Allows user to delete an item of clothing in his wardrobe",
+    "queries": [],
+    "exampleResponse": {}
+  }
+}
