@@ -33,7 +33,7 @@ app.use(express.json());
 app.get("/api/clothes/:user_id", getClothesByUserId);
 app.get("/api/clothes/:user_id/:item_id", getClothesByUserIdClothesId);
 app.post("/api/clothes/:user_id", postClothesByUserId);
-app.patch("/api/clothes/:user_id/:item_id", patchClothesByClothesId);
+app.patch("/api/clothes/:user_id/:item_id", patchClothesByClothesId); //Complete the errors for this endpoint
 app.delete("/api/clothes/:user_id/:item_id", deleteClothesByUserId);
 
 app.get("/api/users/:user_id", getUserByUserId);
