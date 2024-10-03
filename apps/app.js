@@ -17,6 +17,8 @@ const {
 const {
   patchClothesByClothesId,
 } = require("../controllers/patchClothesByClothesId.controller");
+
+const {
   deleteClothesByUserId,
 } = require("../controllers/deleteClothesByUserId.controller");
 
@@ -29,17 +31,13 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/clothes/:user_id", getClothesByUserId);
+app.get("/api/clothes/:user_id/:item_id", getClothesByUserIdClothesId);
 app.post("/api/clothes/:user_id", postClothesByUserId);
 app.patch("/api/clothes/:user_id/:item_id", patchClothesByClothesId);
-
+app.delete("/api/clothes/:user_id/:item_id", deleteClothesByUserId);
 
 app.get("/api/users/:user_id", getUserByUserId);
 app.post("/api/users", postUser);
-
-
-app.delete("/api/clothes/:user_id/:item_id", deleteClothesByUserId);
-
-app.get("/api/clothes/:user_id/:item_id", getClothesByUserIdClothesId);
 
 app.use((err, req, res, next) => {
   if (err.code === "22P02") {
