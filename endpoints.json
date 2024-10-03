@@ -107,7 +107,7 @@
   },
 
   "DELETE /api/clothes/:user_id/:item_id": {
-    "description": "Allows user to delete an item of clothing in his wardrobe",
+    "description": "Allows user to delete an item of clothing to wardrobe",
     "queries": [],
     "exampleResponse": {}
   }
