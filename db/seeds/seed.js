@@ -16,7 +16,7 @@ const seed = ({ userData, clothesData }) => {
           password VARCHAR(16) NOT NULL,
           first_name VARCHAR(20) NOT NULL,
           last_name VARCHAR(20) NOT NULL,
-          user_preferences JSON
+          user_preferences JSONB
         );`);
       })
       .then(() => {
@@ -28,7 +28,7 @@ const seed = ({ userData, clothesData }) => {
           created_at TIMESTAMP DEFAULT NOW(),
           top_category VARCHAR NOT NULL,
           category VARCHAR NOT NULL,
-          tags JSON,
+          tags JSONB,
           color VARCHAR NOT NULL
         );`);
       })

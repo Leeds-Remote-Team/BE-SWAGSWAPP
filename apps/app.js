@@ -15,6 +15,8 @@ const {
 } = require("../controllers/getUserByUserId.controller");
 
 const {
+  patchClothesByClothesId,
+} = require("../controllers/patchClothesByClothesId.controller");
   deleteClothesByUserId,
 } = require("../controllers/deleteClothesByUserId.controller");
 
@@ -27,12 +29,13 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/clothes/:user_id", getClothesByUserId);
-
 app.post("/api/clothes/:user_id", postClothesByUserId);
+app.patch("/api/clothes/:user_id/:item_id", patchClothesByClothesId);
 
-app.post("/api/users", postUser);
 
 app.get("/api/users/:user_id", getUserByUserId);
+app.post("/api/users", postUser);
+
 
 app.delete("/api/clothes/:user_id/:item_id", deleteClothesByUserId);
 
