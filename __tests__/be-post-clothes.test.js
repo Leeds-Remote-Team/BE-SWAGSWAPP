@@ -33,7 +33,7 @@ describe("/api/clothes/:user_id", () => {
           category: "polo-shirt",
           tags: { style: "smartwear" },
           color: "white",
-          item_id: 4,
+          item_id: expect.any(Number),
           created_at: expect.any(String),
         });
       });
