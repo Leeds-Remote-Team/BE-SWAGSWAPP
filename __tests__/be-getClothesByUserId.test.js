@@ -3,6 +3,7 @@ const app = require("../apps/app.js");
 const db = require("../db/connection.js");
 const seed = require("../db/seeds/seed.js");
 const { userData, clothesData } = require("../db/data/test-data/index.js");
+require("jest-sorted");
 
 beforeAll(() => {
   return seed({ userData, clothesData });
@@ -36,7 +37,7 @@ describe("/api/clothes/:user_id", () => {
       });
   });
 
-  it("404: Should return an error for an endpoint that dosn't exist", () => {
+  it("400: Should return an error for an endpoint that dosn't exist", () => {
     return request(app)
       .get("/api/hello")
       .expect(404)
@@ -46,69 +47,124 @@ describe("/api/clothes/:user_id", () => {
   });
   it("200 - returns the correct clothes with searchText", () => {
     return request(app)
-      .get("/api/clothes/2?searchText=brown")
+      .get("/api/clothes/1?searchText=red")
       .expect(200)
       .then((response) => {
         const result = response.body;
         expect(result).toEqual([
           {
-            item_id: 2,
-            user_id: 2,
+            user_id: 1,
+            created_at: expect.any(String),
+            item_id: expect.any(Number),
             img_url:
               "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
-            top_category: "footwear",
-            category: "feet",
+            top_category: "clothing",
+            category: "t-shirt",
             tags: {
-              shoes: "shoe",
-              last_date_worn: ["date_string"],
-              wear_frequency: 10,
+              sleeves: "short-sleeve",
+              style: "t-shirt",
+              last_date_worn: "date_string",
+              wear_frequency: 0,
             },
-            color: "brown",
-            created_at: expect.any(String),
+            color: "red",
           },
         ]);
       });
   });
-
-  it("200 - returns clothes ordered by wear_frequency", () => {
+  it("404 - returns the correct error when searchText does ot exist in any of the data", () => {
     return request(app)
-      .get("/api/clothes/2?sortBy=wear_frequency")
+      .get("/api/clothes/1?searchText=doesntexist")
+      .expect(404)
+      .then((response) => {
+        const result = response.body.msg;
+        expect(result).toEqual(
+          "Sorry, you don't have any clothes. Try searching for something else!"
+        );
+      });
+  }, 10000);
+  it("200 - returns all the user's clothes when searchText is 'a'", () => {
+    return request(app)
+      .get("/api/clothes/2?searchText=a")
       .expect(200)
       .then((response) => {
         const result = response.body;
-        expect(result.length).toBeGreaterThan(0);
         expect(result).toEqual([
           {
-            item_id: 2,
+            created_at: expect.any(String),
+            item_id: expect.any(Number),
             user_id: 2,
             img_url:
               "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
-            created_at: expect.any(String),
             top_category: "footwear",
             category: "feet",
             tags: {
               shoes: "shoe",
-              last_date_worn: ["date_string"],
+              last_date_worn: "date_string",
               wear_frequency: 10,
             },
             color: "brown",
           },
           {
-            item_id: 3,
+            created_at: expect.any(String),
+            item_id: expect.any(Number),
             user_id: 2,
             img_url:
               "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
-            created_at: expect.any(String),
             top_category: "footwear",
             category: "feet",
             tags: {
               shoes: "shoe",
-              last_date_worn: ["date_string"],
+              last_date_worn: "date_string",
               wear_frequency: 0,
             },
             color: "green",
           },
         ]);
+      });
+  });
+
+  it("200 - returns clothes ordered by wear_frequency in descending order", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=wear_frequency&order=desc")
+      .expect(200)
+      .then((response) => {
+        const result = response.body;
+        expect(result.length).toBe(40);
+        expect(result[0].tags.wear_frequency).toBe(189);
+        expect(result[39].tags.wear_frequency).toBe(0);
+      });
+  });
+  it("200 - returns clothes ordered by wear_frequency in ascending order", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=wear_frequency&order=asc")
+      .expect(200)
+      .then((response) => {
+        const result = response.body;
+        expect(result.length).toBe(40);
+        expect(result[0].tags.wear_frequency).toBe(0);
+        expect(result[39].tags.wear_frequency).toBe(189);
+      });
+  });
+  it("200 - returns clothes ordered by newest to oldest", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=wear_frequency&order=desc")
+      .expect(200)
+      .then((response) => {
+        const result = response.body;
+        expect(result.length).toBe(40);
+        expect(result[0].tags.last_date_worn).toBe("2024-09-20");
+        expect(result[39].tags.last_date_worn).toBe("date_string");
+      });
+  });
+  it("200 - returns clothes ordered by oldest to newest", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=wear_frequency&order=asc")
+      .expect(200)
+      .then((response) => {
+        const result = response.body;
+        expect(result.length).toBe(40);
+        expect(result[0].tags.last_date_worn).toBe("date_string");
+        expect(result[39].tags.last_date_worn).toBe("2024-09-20");
       });
   });
 });

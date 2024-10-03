@@ -65,7 +65,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           category: "Upperbody",
           tags: {
             shoes: "shoe",
-            last_date_worn: ["date_string"],
+            last_date_worn: "date_string",
             wear_frequency: 10,
           },
           color: "blue",
@@ -97,7 +97,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           category: "Upperbody",
           tags: {
             shoes: "shoe",
-            last_date_worn: ["date_string"],
+            last_date_worn: "date_string",
             wear_frequency: 10,
           },
           color: "blue",
@@ -126,7 +126,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           category: "wrist",
           tags: {
             watch: "watch",
-            last_date_worn: ["date_string"],
+            last_date_worn: "date_string",
             wear_frequency: 0,
           },
           color: "gold",
