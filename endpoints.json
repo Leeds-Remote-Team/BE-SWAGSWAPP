@@ -76,7 +76,7 @@
   },
 
   "PATCH /api/clothes/:user_id/:item_id": {
-    "description": "allows a user to change details of his clothes, e.g. last worn or wear frequency",
+    "description": "allows a user to change details of clothing item, e.g. last worn or wear frequency",
     "queries": [],
     "exampleResponse": [
       {
