@@ -167,4 +167,18 @@ describe("/api/clothes/:user_id", () => {
         expect(result[39].tags.last_date_worn).toBe("2024-09-20");
       });
   });
+  it("200 - allows sorting clothes by a valid column (wear_frequency)", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=wear_frequency&order=desc")
+      .expect(200)
+      .then((res) => {
+        const result = res.body;
+        const wearCount = result.map((item) => {
+          return item.tags.wear_frequency;
+        });
+        expect(wearCount).toBeSorted({
+          descending: true,
+        });
+      });
+  });
 });
