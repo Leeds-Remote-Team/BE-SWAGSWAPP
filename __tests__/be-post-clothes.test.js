@@ -17,7 +17,7 @@ describe("/api/clothes/:user_id", () => {
       .post("/api/clothes/2")
       .send({
         img_url:
-          "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+          "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         top_category: "clothing",
         category: "polo-shirt",
         tags: { style: "smartwear" },
@@ -28,7 +28,7 @@ describe("/api/clothes/:user_id", () => {
         expect(response.body.postedClothes).toEqual({
           user_id: 2,
           img_url:
-            "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+            "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
           top_category: "clothing",
           category: "polo-shirt",
           tags: { style: "smartwear" },
@@ -51,7 +51,7 @@ describe("/api/clothes/:user_id", () => {
       .post("/api/clothes/glue")
       .send({
         img_url:
-          "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+          "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         top_category: "clothing",
         category: "polo-shirt",
         tags: { style: "smartwear" },
@@ -86,7 +86,7 @@ describe("/api/clothes/:user_id", () => {
       .post("/api/clothes/2")
       .send({
         img_url:
-          "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+          "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
         category: "polo-shirt",
         tags: { style: "smartwear" },
         color: "white",

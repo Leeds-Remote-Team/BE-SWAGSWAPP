@@ -27,7 +27,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           item_id: 1,
           user_id: 1,
           img_url:
-            "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+            "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
           top_category: "clothing",
           category: "t-shirt",
           tags: {
@@ -45,7 +45,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
   it("200, should returns an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
-        "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
+        "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
       top_category: "t-shirt",
       category: "Upperbody",
       color: "blue",
@@ -60,7 +60,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           item_id: 2,
           user_id: 2,
           img_url:
-            "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
+            "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
           top_category: "t-shirt",
           category: "Upperbody",
           tags: {

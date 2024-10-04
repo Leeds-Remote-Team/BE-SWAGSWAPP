@@ -57,7 +57,7 @@ describe("/api/clothes/:user_id", () => {
             created_at: expect.any(String),
             item_id: expect.any(Number),
             img_url:
-              "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+              "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
             top_category: "clothing",
             category: "t-shirt",
             tags: {
@@ -94,7 +94,7 @@ describe("/api/clothes/:user_id", () => {
             item_id: expect.any(Number),
             user_id: 2,
             img_url:
-              "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+              "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
             top_category: "footwear",
             category: "feet",
             tags: {
@@ -109,7 +109,7 @@ describe("/api/clothes/:user_id", () => {
             item_id: expect.any(Number),
             user_id: 2,
             img_url:
-              "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+              "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
             top_category: "footwear",
             category: "feet",
             tags: {
