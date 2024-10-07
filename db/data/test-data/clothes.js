@@ -8,7 +8,7 @@ module.exports = [
     tags: {
       sleeves: "short-sleeve",
       style: "t-shirt",
-      last_date_worn: "date_string",
+      last_date_worn: "2024-01-11",
       wear_frequency: 0,
     },
     color: "red",
@@ -21,7 +21,7 @@ module.exports = [
     category: "feet",
     tags: {
       shoes: "shoe",
-      last_date_worn: "date_string",
+      last_date_worn: "2024-09-17",
       wear_frequency: 10,
     },
     color: "brown",
@@ -34,7 +34,7 @@ module.exports = [
     category: "feet",
     tags: {
       shoes: "shoe",
-      last_date_worn: "date_string",
+      last_date_worn: "2024-09-29",
       wear_frequency: 0,
     },
     color: "green",
@@ -47,7 +47,7 @@ module.exports = [
     category: "wrist",
     tags: {
       watch: "watch",
-      last_date_worn: "date_string",
+      last_date_worn: "2024-09-15",
       wear_frequency: 0,
     },
     color: "gold",
