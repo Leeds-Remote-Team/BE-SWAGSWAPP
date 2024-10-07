@@ -22,8 +22,12 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
     queryStr += ` AND (clothes.top_category ILIKE $${queryValues.length} OR clothes.category ILIKE $${queryValues.length} OR clothes.tags->>'sleeves' ILIKE $${queryValues.length} OR clothes.tags->>'style' ILIKE $${queryValues.length} OR clothes.color ILIKE $${queryValues.length})`;
   }
 
-  queryStr += ` ORDER BY (tags->>'${sortBy}')::int ${order};`;
-
+  if (sortBy === "last_date_worn") {
+    queryStr += ` ORDER BY (tags->>'${sortBy}')::date ${order};`;
+  } else {
+    queryStr += ` ORDER BY (tags->>'${sortBy}')::int ${order};`;
+  }
+  console.log(queryStr);
   return db.query(queryStr, queryValues).then(({ rows }) => {
     if (rows.length === 0) {
       return Promise.reject({
@@ -31,6 +35,7 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
         msg: `Sorry, you don't have any clothes. Try searching for something else!`,
       });
     }
+    console.log(rows);
     return rows;
   });
 };
