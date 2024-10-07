@@ -55,7 +55,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory1.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EXKBCozdbStJvSs344zIm8ABd_i_QjJKBldwa8_BorKIFA?e=PXeEwh",
     top_category: "accessories",
     category: "bag strap",
     tags: {
@@ -69,7 +69,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory2.jpg",
+      "https://media-photos.depop.com/b1/26594948/1994930131_54e8979e9aa0494e937f7a9814e21d28/P0.jpg",
     top_category: "accessories",
     category: "belt",
     tags: {
