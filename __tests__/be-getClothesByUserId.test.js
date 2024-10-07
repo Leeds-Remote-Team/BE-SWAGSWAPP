@@ -63,7 +63,7 @@ describe("/api/clothes/:user_id", () => {
             tags: {
               sleeves: "short-sleeve",
               style: "t-shirt",
-              last_date_worn: "date_string",
+              last_date_worn: "2024-01-11",
               wear_frequency: 0,
             },
             color: "red",
@@ -99,7 +99,7 @@ describe("/api/clothes/:user_id", () => {
             category: "feet",
             tags: {
               shoes: "shoe",
-              last_date_worn: "date_string",
+              last_date_worn: "2024-09-17",
               wear_frequency: 10,
             },
             color: "brown",
@@ -114,7 +114,7 @@ describe("/api/clothes/:user_id", () => {
             category: "feet",
             tags: {
               shoes: "shoe",
-              last_date_worn: "date_string",
+              last_date_worn: "2024-09-29",
               wear_frequency: 0,
             },
             color: "green",
@@ -153,7 +153,7 @@ describe("/api/clothes/:user_id", () => {
         const result = response.body;
         expect(result.length).toBe(40);
         expect(result[0].tags.last_date_worn).toBe("2024-09-20");
-        expect(result[39].tags.last_date_worn).toBe("date_string");
+        expect(result[39].tags.last_date_worn).toBe("2024-09-15");
       });
   });
   it("200 - returns clothes ordered by oldest to newest", () => {
@@ -163,7 +163,7 @@ describe("/api/clothes/:user_id", () => {
       .then((response) => {
         const result = response.body;
         expect(result.length).toBe(40);
-        expect(result[0].tags.last_date_worn).toBe("date_string");
+        expect(result[0].tags.last_date_worn).toBe("2024-09-15");
         expect(result[39].tags.last_date_worn).toBe("2024-09-20");
       });
   });
@@ -181,17 +181,16 @@ describe("/api/clothes/:user_id", () => {
         });
       });
   });
-  it.only("200 - allows sorting clothes by a valid column (last_date_worn) in desc order", () => {
+  it("200 - allows sorting clothes by a valid column (last_date_worn) in desc order", () => {
     return request(app)
       .get("/api/clothes/3?sortBy=last_date_worn&order=desc")
       .expect(200)
       .then((res) => {
         const result = res.body;
-        console.log(result);
-        // const lastDateWorn = result.map((item) => {
-        //   return item.tags.last_date_worn;
-
-        expect(result).toBe("");
+        const lastDateWorn = result.map((item) => {
+          return item.tags.last_date_worn;
+        });
+        expect(lastDateWorn).toBeSorted({ descending: true });
       });
   });
 });

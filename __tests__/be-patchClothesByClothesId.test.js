@@ -42,7 +42,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
       });
   });
 
-  it("200, should returns an updated clothes object in the database when patching clothes column", () => {
+  it("200, should return an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
         "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
@@ -65,7 +65,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           category: "Upperbody",
           tags: {
             shoes: "shoe",
-            last_date_worn: "date_string",
+            last_date_worn: "2024-09-17",
             wear_frequency: 10,
           },
           color: "blue",
@@ -74,7 +74,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
       });
   });
 
-  it("200, should returns an updated clothes object in the database when patching clothes column", () => {
+  it("200, should return an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
         "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
@@ -97,7 +97,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           category: "Upperbody",
           tags: {
             shoes: "shoe",
-            last_date_worn: "date_string",
+            last_date_worn: "2024-09-17",
             wear_frequency: 10,
           },
           color: "blue",
@@ -105,7 +105,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
         });
       });
   });
-  it("200, should returns an updated clothes object in the database when patching clothes column", () => {
+  it("200, should return an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
         "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
@@ -126,7 +126,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           category: "wrist",
           tags: {
             watch: "watch",
-            last_date_worn: "date_string",
+            last_date_worn: "2024-09-15",
             wear_frequency: 0,
           },
           color: "gold",

@@ -27,7 +27,7 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
   } else {
     queryStr += ` ORDER BY (tags->>'${sortBy}')::int ${order};`;
   }
-  console.log(queryStr);
+
   return db.query(queryStr, queryValues).then(({ rows }) => {
     if (rows.length === 0) {
       return Promise.reject({
@@ -35,7 +35,6 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
         msg: `Sorry, you don't have any clothes. Try searching for something else!`,
       });
     }
-    console.log(rows);
     return rows;
   });
 };
