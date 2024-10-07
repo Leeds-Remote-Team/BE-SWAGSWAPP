@@ -42,11 +42,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-<<<<<<< HEAD
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
-=======
       "https://ae01.alicdn.com/kf/HTB1tmcYcRfM8KJjSZFrq6xSdXXax/Luxury-Wrist-Watches-Men-Top-Brand-Gold-Golden-Watches-Men-Sports-Quartz-watch-Watches-Dual-Time.jpg",
->>>>>>> 6bc6cb2 (accessories url changed)
     top_category: "accessories",
     category: "wrist",
     tags: {
