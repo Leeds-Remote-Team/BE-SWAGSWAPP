@@ -181,4 +181,17 @@ describe("/api/clothes/:user_id", () => {
         });
       });
   });
+  it.only("200 - allows sorting clothes by a valid column (last_date_worn) in desc order", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=last_date_worn&order=desc")
+      .expect(200)
+      .then((res) => {
+        const result = res.body;
+        console.log(result);
+        // const lastDateWorn = result.map((item) => {
+        //   return item.tags.last_date_worn;
+
+        expect(result).toBe("");
+      });
+  });
 });
