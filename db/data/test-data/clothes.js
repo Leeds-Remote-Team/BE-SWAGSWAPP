@@ -83,7 +83,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory3.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EUBgrbhXWHpLvVxi5n7bdlABIW5zuQjCxhx1Z3vvQa1oWw?e=ujvGha",
     top_category: "accessories",
     category: "eyewear",
     tags: {
@@ -97,7 +97,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory4.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/Eetkd3OOFvhCphCE6laHCZcBTez6uZgFPrntAFABn1Wt3A?e=O9m1Z3",
     top_category: "accessories",
     category: "sunglasses",
     tags: {
@@ -125,7 +125,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory6.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/ETgFo5iOzF1OrO53rJWVLmoBzHNq_0L4UUbxucPeQ7MDZg?e=daJeZe",
     top_category: "accessories",
     category: "hat",
     tags: {
@@ -237,7 +237,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory14.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/ESpoMaFDKXxFvD_hoYlqW80BJ9_hFk-S3O8-UMfl948RvQ?e=BNbcO9",
     top_category: "accessories",
     category: "sunglasses",
     tags: {
@@ -265,7 +265,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/accessory16.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EW9MvN1e1alIon8HXNHrHHYB8YY4m75_PXvH10Sj-aZ1QA?e=2mpUOI",
     top_category: "accessories",
     category: "hat",
     tags: {
@@ -336,7 +336,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604612.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/Ec7WZf2urehIvKfamOm0rWIB0iuohvObzTiPQWis1gHXvA?e=VuiU5d",
     top_category: "clothing",
     category: "hoodie",
     tags: {
@@ -350,7 +350,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604613.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EfpBW-4XQx1Jv4kN659qXbQBfsHPfDvgzbn2q8m1wdd7zw?e=1mhL4l",
     top_category: "clothing",
     category: "jeans",
     tags: {
@@ -364,7 +364,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604614.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/Ed2s-3xWUQBFlJq0GrBzqvkB_7NRZacbr-8hMUOH53P7SQ?e=5dKjOK",
     top_category: "clothing",
     category: "dress",
     tags: {
@@ -378,7 +378,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604615.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EaOOnjEixqVAiZrZ4TA1t5UBYV8tjRXwfdBj_cJQ1VrSsA?e=PkqABW",
     top_category: "clothing",
     category: "sweater",
     tags: {
@@ -392,7 +392,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604616.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EQeeRtBYMSFNplC69EMCzJYBzBusUq8GUNBFp5LDQW3zlw?e=I7W9pX",
     top_category: "clothing",
     category: "skirt",
     tags: {
@@ -406,7 +406,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604617.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EUdzETw70kdDsDHQ7daHPF0B0F4xj_tv0402Q32k9ipJUA?e=ezdlqa",
     top_category: "clothing",
     category: "shorts",
     tags: {
@@ -420,7 +420,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604618.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/Efxc4rrZTbhCk3Y2tlrxYxoBEKQa7A-byxnFjbAzWfQQGQ?e=er2M4l",
     top_category: "clothing",
     category: "tank top",
     tags: {
@@ -434,7 +434,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604619.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EaJeM_5UzChKunUGS2JIA3ABD11enMZmX6CCRq3s7lihXg?e=7oyfcP",
     top_category: "clothing",
     category: "blouse",
     tags: {
@@ -448,7 +448,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604620.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/ERdTh2B0JUxHtMPhALW-cOMBtTiCAm_Dj0XvWHZqwdQ0mw?e=nbnPHT",
     top_category: "clothing",
     category: "overalls",
     tags: {
@@ -462,7 +462,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604621.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EX5U0UVnjTVNobU-P--26acB4zLpxdsTa674ejB_xFOt9A?e=mYr9Zu",
     top_category: "clothing",
     category: "jacket",
     tags: {
@@ -476,7 +476,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604622.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/ESFoVSpTUPxPtTZlJ37MKtkBgLL7TvfU4qAkU0CoPP3ozw?e=9PvuVv",
     top_category: "clothing",
     category: "suit",
     tags: {
@@ -490,7 +490,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604623.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EaEeah6Kr3pEtquAkyNTF2QBviFRUyngfCGkrHY1pkIYHA?e=Qj9gcH",
     top_category: "clothing",
     category: "pajamas",
     tags: {
@@ -503,7 +503,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604624.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EeUgRNHajBhAkOggrR_qWbUB2s2DnylvQBMC0VJBZUPPeQ?e=WjSSyo",
     top_category: "clothing",
     category: "sundress",
     tags: {
@@ -517,7 +517,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604625.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EcL6422BDGpIm1rQN__c99IBeWbFAqZZIoWhVdi-toZsGw?e=3blUct",
     top_category: "clothing",
     category: "cardigan",
     tags: {
@@ -531,7 +531,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604626.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EYz9opxKZhxFohQO0bKOEUMB66mS00awnZxWwsocUcPALg?e=792wgx",
     top_category: "clothing",
     category: "windbreaker",
     tags: {
@@ -544,7 +544,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604627.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EZU_5uhRV1dKrQk7HUyUROkBOeqMMrT7nCkkNab5aPz2rQ?e=WIEu8i",
     top_category: "clothing",
     category: "track pants",
     tags: {
@@ -584,7 +584,7 @@ module.exports = [
   {
     user_id: 3,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604630.jpg",
+      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EQ3jdbfsWVFKrpYwntLWetEBOTflKJLPHfLwyruMpIoVtA?e=0GMxum",
     top_category: "clothing",
     category: "sneakers",
     tags: {
