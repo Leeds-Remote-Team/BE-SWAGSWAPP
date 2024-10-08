@@ -6,11 +6,11 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
   const validOrders = ["asc", "desc"];
 
   if (!validSorting.includes(sortBy)) {
-    return Promise.reject({ msg: "Cannot sort by this" });
+    return Promise.reject({ msg: `Cannot sort by '${sortBy}'` });
   }
 
   if (!validOrders.includes(order)) {
-    return Promise.reject({ msg: "Cannot order by this" });
+    return Promise.reject({ msg: `Cannot order by '${order}'` });
   }
 
   let queryStr = `SELECT * FROM clothes WHERE clothes.user_id = $1`;
@@ -26,7 +26,7 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
     queryStr += ` ORDER BY (tags->>'${sortBy}')::date ${order};`;
   }
   if (sortBy === "item_id") {
-    queryStr += ` ORDER BY (tags->>'${sortBy}')::int ${order};`;
+    queryStr += ` ORDER BY clothes.item_id ${order};`;
   }
   if (sortBy === "wear_frequency") {
     queryStr += ` ORDER BY (tags->>'${sortBy}')::int ${order};`;
