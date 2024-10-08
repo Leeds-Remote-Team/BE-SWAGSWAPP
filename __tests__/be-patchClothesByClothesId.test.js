@@ -12,7 +12,7 @@ afterAll(() => {
 });
 
 describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
-  it("200, should returns an updated clothes object in the database when patching a key on tags column", () => {
+  it("200, returns an updated clothes object in the database when patching a key on tags column", () => {
     const tagsUpdate = {
       last_date_worn: "021024",
       wear_frequency: 1,
@@ -27,7 +27,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
           item_id: 1,
           user_id: 1,
           img_url:
-            "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+            "https://1drv.ms/i/c/5bd30c3d92ad90ff/EQlO39DRwABBuIAX3CBeqFUBCJS1mUonnobCRDVIIxSoOA?e=fdsRjP",
           top_category: "clothing",
           category: "t-shirt",
           tags: {
@@ -42,7 +42,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
       });
   });
 
-  it("200, should return an updated clothes object in the database when patching clothes column", () => {
+  it("200, returns an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
         "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
@@ -74,7 +74,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
       });
   });
 
-  it("200, should return an updated clothes object in the database when patching clothes column", () => {
+  it("200, returns an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
         "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",
@@ -105,7 +105,7 @@ describe("PATCH /api/clothes/:user_id/:clothes_id", () => {
         });
       });
   });
-  it("200, should return an updated clothes object in the database when patching clothes column", () => {
+  it("200, returns an updated clothes object in the database when patching clothes column", () => {
     const clothesUpdate = {
       img_url:
         "https:// uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727443149223.jpg",

@@ -57,7 +57,7 @@ describe("/api/clothes/:user_id", () => {
             created_at: expect.any(String),
             item_id: expect.any(Number),
             img_url:
-              "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+              "https://1drv.ms/i/c/5bd30c3d92ad90ff/EQlO39DRwABBuIAX3CBeqFUBCJS1mUonnobCRDVIIxSoOA?e=fdsRjP",
             top_category: "clothing",
             category: "t-shirt",
             tags: {
@@ -191,6 +191,18 @@ describe("/api/clothes/:user_id", () => {
           return item.tags.last_date_worn;
         });
         expect(lastDateWorn).toBeSorted({ descending: true });
+      });
+  });
+  it("200 - allows sorting clothes by a valid column (created_at) in desc order", () => {
+    return request(app)
+      .get("/api/clothes/3?sortBy=created_at&order=desc")
+      .expect(200)
+      .then((res) => {
+        const result = res.body;
+        const newClothes = result.map((item) => {
+          return item.created_at;
+        });
+        expect(newClothes).toBeSorted({ descending: true });
       });
   });
 });

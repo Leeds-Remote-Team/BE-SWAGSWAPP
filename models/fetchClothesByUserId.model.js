@@ -2,7 +2,7 @@ const db = require("../db/connection");
 const pg = require("pg-format");
 
 exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
-  const validSorting = ["last_date_worn", "wear_frequency"];
+  const validSorting = ["last_date_worn", "wear_frequency", "created_at"];
   const validOrders = ["asc", "desc"];
 
   if (!validSorting.includes(sortBy)) {
@@ -24,8 +24,14 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
 
   if (sortBy === "last_date_worn") {
     queryStr += ` ORDER BY (tags->>'${sortBy}')::date ${order};`;
-  } else {
+  }
+  if (sortBy === "created_at") {
+    queryStr += ` ORDER BY (tags->>'${sortBy}')::date ${order};`;
+  }
+  if (sortBy === "wear_frequency") {
     queryStr += ` ORDER BY (tags->>'${sortBy}')::int ${order};`;
+  } else {
+    queryStr += `;`;
   }
 
   return db.query(queryStr, queryValues).then(({ rows }) => {
