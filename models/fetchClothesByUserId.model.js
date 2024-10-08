@@ -33,7 +33,6 @@ exports.fetchClothesByUserId = (user_id, searchText, sortBy, order) => {
   } else {
     queryStr += `;`;
   }
-
   return db.query(queryStr, queryValues).then(({ rows }) => {
     if (rows.length === 0) {
       return Promise.reject({
