@@ -1,7 +1,7 @@
 const db = require("../db/connection");
 const pg = require("pg-format");
 
-exports.fetchClothesByUserIdClothesId = (item_id, user_id) => {
+exports.fetchClothesByUserIdClothesId = (user_id, item_id) => {
   return db
     .query(
       `SELECT * FROM clothes WHERE clothes.item_id = $1 AND clothes.user_id = $2;`,

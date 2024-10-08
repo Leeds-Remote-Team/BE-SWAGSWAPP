@@ -30,40 +30,20 @@ exports.updateClothesByClothesId = (user_id, item_id, body) => {
       });
   }
 
-  console.log(
-    img_url,
-    top_category,
-    category,
-    color,
-    last_date_worn,
-    wear_frequency
-  );
-
-  const queryString = `UPDATE clothes SET `;
-  if (img_url) {
-    queryString += `img_url = ${img_url}`;
-    console.log(queryString);
-  }
-  if (top_category) {
-    queryString += `, top_category = ${top_category}`;
-    console.log(queryString);
-  }
-  if (category) {
-    queryString += `, category = ${category}`;
-    console.log(queryString);
-  }
-  if (color) {
-    queryString += `, color = ${color}`;
-    console.log(queryString);
-  }
   return db
-    .query(queryString + ` WHERE user_id = $1 AND item_id = $2 RETURNING *;`, [
-      user_id,
-      item_id,
-    ])
+    .query(
+      `
+        UPDATE clothes SET 
+        img_url = COALESCE($1, img_url), 
+        top_category = COALESCE($2, top_category), 
+        category = COALESCE($3, category), 
+        color = COALESCE($4, color)
+        WHERE user_id = $5 AND item_id = $6
+        RETURNING *;
+        `,
+      [img_url, top_category, category, color, user_id, item_id]
+    )
     .then(({ rows }) => {
-      console.log(rows);
       return rows[0];
-    })
-    .catch((err) => console.log(err));
+    });
 };
