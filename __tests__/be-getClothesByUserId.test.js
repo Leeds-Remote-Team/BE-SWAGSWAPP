@@ -193,16 +193,16 @@ describe("/api/clothes/:user_id", () => {
         expect(lastDateWorn).toBeSorted({ descending: true });
       });
   });
-  it("200 - allows sorting clothes by a valid column (created_at) in desc order", () => {
+  it("200 - allows sorting clothes by a valid column (item_id) in desc order", () => {
     return request(app)
-      .get("/api/clothes/3?sortBy=created_at&order=desc")
+      .get("/api/clothes/3?sortBy=item_id&order=asc")
       .expect(200)
       .then((res) => {
         const result = res.body;
         const newClothes = result.map((item) => {
-          return item.created_at;
+          return item.item_id;
         });
-        expect(newClothes).toBeSorted({ descending: true });
+        expect(newClothes).toBeSorted({ descending: false });
       });
   });
 });
