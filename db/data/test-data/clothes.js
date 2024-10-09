@@ -2,7 +2,7 @@ module.exports = [
   {
     user_id: 1,
     img_url:
-      "https://1drv.ms/i/c/5bd30c3d92ad90ff/EQlO39DRwABBuIAX3CBeqFUBCJS1mUonnobCRDVIIxSoOA?e=fdsRjP",
+      "https://www.malltop1.com/UpLoad/Pro_Images_02/o_Sexy-Off-Shoulder-Red-T-shirt-N11859_59_21_565.jpg",
     top_category: "clothing",
     category: "t-shirt",
     tags: {
@@ -15,8 +15,7 @@ module.exports = [
   },
   {
     user_id: 2,
-    img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+    img_url: "https://i.ebayimg.com/images/g/VTsAAOSw5Ylb85Gs/s-l640.jpg",
     top_category: "footwear",
     category: "feet",
     tags: {
@@ -29,7 +28,7 @@ module.exports = [
   {
     user_id: 2,
     img_url:
-      "https://uhqkbcxmjnqjhwbmupzq.supabase.co/storage/v1/object/public/ClothingImages/public/1727434604611.jpg",
+      "https://img0.etsystatic.com/000/0/5874392/il_fullxfull.316681226.jpg",
     top_category: "footwear",
     category: "feet",
     tags: {
